@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #202124;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100dvh;
+}
+
+/* Customizations for React PDF Viewer to look more luxury if needed */
+.rpv-core__viewer {
+  background-color: #202124 !important;
+}
+
+.rpv-default-layout__toolbar {
+  background-color: #323639 !important;
+  border-bottom: 1px solid #4a4a4a !important;
+}
+
+.rpv-core__inner-page {
+  background-color: #fff !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Fix mobile zooming and touch actions */
+.rpv-core__page-layer {
+  touch-action: pan-x pan-y !important;
+}
