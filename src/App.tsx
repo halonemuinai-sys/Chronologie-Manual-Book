@@ -6,8 +6,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/m/:slug" element={<Viewer />} />
-        <Route path="/d/:slug" element={<Downloader />} />
+        <Route path="/download/:slug" element={<Downloader />} />
+        <Route path="/:slug" element={<Viewer />} />
         <Route path="*" element={
           <div className="not-found">
             <h1>404</h1>

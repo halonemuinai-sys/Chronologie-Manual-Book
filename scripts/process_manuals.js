@@ -14,8 +14,8 @@ const OUTPUTS_QR_VIEW_DIR = path.join(ROOT_DIR, 'outputs', 'qr_view');
 const OUTPUTS_QR_DOWNLOAD_DIR = path.join(ROOT_DIR, 'outputs', 'qr_download');
 const MAPPING_FILE = path.join(ROOT_DIR, 'src', 'config', 'mapping.json');
 // Menggunakan domain Vercel Anda secara langsung
-const BASE_URL_VIEW = 'https://chronologie-manual-book.vercel.app/m/';
-const BASE_URL_DOWNLOAD = 'https://chronologie-manual-book.vercel.app/d/';
+const BASE_URL_VIEW = 'https://chronologie-manual-book.vercel.app/';
+const BASE_URL_DOWNLOAD = 'https://chronologie-manual-book.vercel.app/download/';
 
 // Initialize directories
 [PUBLIC_DOCS_DIR, OUTPUTS_QR_VIEW_DIR, OUTPUTS_QR_DOWNLOAD_DIR, path.dirname(MAPPING_FILE)].forEach(dir => {
@@ -34,46 +34,30 @@ async function processManuals() {
         return;
     }
 
+    // We will rewrite mapping completely to ensure clean filename slugs are used
     let mapping = {};
-    if (fs.existsSync(MAPPING_FILE)) {
-        try {
-            mapping = JSON.parse(fs.readFileSync(MAPPING_FILE, 'utf-8'));
-        } catch(e) {
-            console.log('No valid existing mapping found, starting fresh.');
-        }
-    }
-
-    // Create a set of existing titles to avoid regenerating them
-    const existingTitles = new Set(Object.values(mapping).map(item => item.title));
     let addedCount = 0;
 
     for (const file of files) {
         const title = file.replace('.pdf', '').trim();
         
-        let slug = null;
+        // Buat slug dari nama file (huruf kecil, spasi diganti strip)
+        let slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
 
-        // Skip if already processed, but we still want to re-generate the QR codes with the new Domain!
-        if (existingTitles.has(title)) {
-            // Find the existing slug
-            slug = Object.keys(mapping).find(key => mapping[key].title === title);
-            console.log(`Re-generating QR for existing item "${title}" (slug: ${slug})`);
-        } else {
-            slug = nanoid(8).toLowerCase();
-            const originalPath = path.join(SOURCE_DIR, file);
-            const newFileName = `${slug}.txt`; // Disguised as .txt
-            const destPath = path.join(PUBLIC_DOCS_DIR, newFileName);
-            
-            // Copy file
-            console.log(`Copying ${file} -> ${newFileName}`);
-            fs.copyFileSync(originalPath, destPath);
+        const originalPath = path.join(SOURCE_DIR, file);
+        const newFileName = `${slug}.txt`; // Disguised as .txt
+        const destPath = path.join(PUBLIC_DOCS_DIR, newFileName);
+        
+        // Copy file
+        console.log(`Copying ${file} -> ${newFileName}`);
+        fs.copyFileSync(originalPath, destPath);
 
-            // Add to mapping
-            mapping[slug] = {
-                file: newFileName,
-                title: title
-            };
-            addedCount++;
-        }
+        // Add to mapping
+        mapping[slug] = {
+            file: newFileName,
+            title: title
+        };
+        addedCount++;
 
         // Generate QR Code for View Mode
         const urlView = `${BASE_URL_VIEW}${slug}`;
