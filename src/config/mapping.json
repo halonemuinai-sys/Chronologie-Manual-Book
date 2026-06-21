@@ -1,4 +1,44 @@
 {
+  "1000-id-garansi-internasional": {
+    "file": "1000-id-garansi-internasional.txt",
+    "title": "1000_ID Garansi Internasional"
+  },
+  "1001-id-manual-winding-bahasa": {
+    "file": "1001-id-manual-winding-bahasa.txt",
+    "title": "1001_ID Manual Winding Bahasa"
+  },
+  "1002-id-jam-tangan-quartz": {
+    "file": "1002-id-jam-tangan-quartz.txt",
+    "title": "1002_ID Jam Tangan Quartz"
+  },
+  "1003-id-kronograf-dengan-pemutaran-otomatis-atau-manual": {
+    "file": "1003-id-kronograf-dengan-pemutaran-otomatis-atau-manual.txt",
+    "title": "1003_ID KRONOGRAF DENGAN PEMUTARAN OTOMATIS ATAU MANUAL"
+  },
+  "1004-idkronograf-quartz": {
+    "file": "1004-idkronograf-quartz.txt",
+    "title": "1004_IDKRONOGRAF QUARTZ"
+  },
+  "1007-idkhaki-navy-scuba-gmt": {
+    "file": "1007-idkhaki-navy-scuba-gmt.txt",
+    "title": "1007_IDKHAKI NAVY SCUBA GMT"
+  },
+  "1008-id-psr": {
+    "file": "1008-id-psr.txt",
+    "title": "1008_ID PSR"
+  },
+  "1011-idjazzmaster-face-2-face-iii": {
+    "file": "1011-idjazzmaster-face-2-face-iii.txt",
+    "title": "1011_IDJAZZMASTER FACE 2 FACE III"
+  },
+  "1012-idventura-edge-dune": {
+    "file": "1012-idventura-edge-dune.txt",
+    "title": "1012_IDVENTURA EDGE DUNE"
+  },
+  "1016-idpsr-74": {
+    "file": "1016-idpsr-74.txt",
+    "title": "1016_IDPSR 74"
+  },
   "cali-2761-gmt": {
     "file": "cali-2761-gmt.txt",
     "title": "Cali 2761 GMT"
@@ -66,5 +106,33 @@
   "cali-quartz-shine": {
     "file": "cali-quartz-shine.txt",
     "title": "Cali Quartz Shine"
+  },
+  "mode-emploi-edox-en-web-bahasa": {
+    "file": "mode-emploi-edox-en-web-bahasa.txt",
+    "title": "Mode_emploi-EDOX-EN-web (Bahasa)"
+  },
+  "sistem-opersional-cmm-10-caliber": {
+    "file": "sistem-opersional-cmm-10-caliber.txt",
+    "title": "SISTEM OPERSIONAL CMM.10 CALIBER"
+  },
+  "sistem-opersional-cmm-20-caliber": {
+    "file": "sistem-opersional-cmm-20-caliber.txt",
+    "title": "SISTEM OPERSIONAL CMM.20 CALIBER"
+  },
+  "sistem-opersional-cmm-30-caliber": {
+    "file": "sistem-opersional-cmm-30-caliber.txt",
+    "title": "SISTEM OPERSIONAL CMM.30 CALIBER"
+  },
+  "sistem-opersional-sw200-1-caliber": {
+    "file": "sistem-opersional-sw200-1-caliber.txt",
+    "title": "SISTEM OPERSIONAL SW200-1  CALIBER"
+  },
+  "sistem-opersional-vh-31-caliber": {
+    "file": "sistem-opersional-vh-31-caliber.txt",
+    "title": "SISTEM OPERSIONAL VH.31 CALIBER"
+  },
+  "sistem-opersional-vk-64-vk-61-caliber": {
+    "file": "sistem-opersional-vk-64-vk-61-caliber.txt",
+    "title": "SISTEM OPERSIONAL VK-64 & VK-61 CALIBER"
   }
 }
