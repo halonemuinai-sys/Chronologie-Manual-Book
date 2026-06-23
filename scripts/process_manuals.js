@@ -45,7 +45,7 @@ async function processManuals() {
         let slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
 
         const originalPath = path.join(SOURCE_DIR, file);
-        const newFileName = `${slug}.txt`; // Disguised as .txt
+        const newFileName = `${slug}.pdf`;
         const destPath = path.join(PUBLIC_DOCS_DIR, newFileName);
         
         // Copy file
